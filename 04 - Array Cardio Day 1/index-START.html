@@ -29,6 +29,14 @@
 
     const people = ['Beck, Glenn', 'Becker, Carl', 'Beckett, Samuel', 'Beddoes, Mick', 'Beecher, Henry', 'Beethoven, Ludwig', 'Begin, Menachem', 'Belloc, Hilaire', 'Bellow, Saul', 'Benchley, Robert', 'Benenson, Peter', 'Ben-Gurion, David', 'Benjamin, Walter', 'Benn, Tony', 'Bennington, Chester', 'Benson, Leana', 'Bent, Silas', 'Bentsen, Lloyd', 'Berger, Ric', 'Bergman, Ingmar', 'Berio, Luciano', 'Berle, Milton', 'Berlin, Irving', 'Berne, Eric', 'Bernhard, Sandra', 'Berra, Yogi', 'Berry, Halle', 'Berry, Wendell', 'Bethea, Erin', 'Bevan, Aneurin', 'Bevel, Ken', 'Biden, Joseph', 'Bierce, Ambrose', 'Biko, Steve', 'Billings, Josh', 'Biondo, Frank', 'Birrell, Augustine', 'Black, Elk', 'Blair, Robert', 'Blair, Tony', 'Blake, William'];
 
+// 1. Array.prototype.filter()
+    // Bring in 10 things and return two
+// Array.prototype.map()
+  // 2. Map returns the Same amount of items you give it.
+  // takes in an array, does something with it & returns an array of the same length
+  // see it as a factory, stamping items somehow and returning them all then 
+
+
 // Array.prototype.filter()
 // 1. Filter the list of inventors for those who were born in the 1500's
     const fifteen = inventors.filter(function(inventor) {
@@ -57,8 +65,23 @@
     console.table(oneLineTrueFalseArrowFunction);
 
 
-    // Array.prototype.map()
-    // 2. Give us an array of the inventors' first and last names
+// Array.prototype.map()
+// 2. Give us an array of the inventors' first and last names
+    // 2a - no spaces
+    // const fullName = inventors.map(inventor => inventor.first + inventor.last);
+    // console.log('fullName ', fullName);
+    // CONSOLE fullName  (12) ["AlbertEinstein", "IsaacNewton", "GalileoGalilei", "MarieCurie", "JohannesKepler", "NicolausCopernicus", "MaxPlanck", "KatherineBlodgett", "AdaLovelace", "Sarah E.Goode", "LiseMeitner", "HannaHammarström"]0: "AlbertEinstein"1: "IsaacNewton"2: "GalileoGalilei"3: "MarieCurie"4: "JohannesKepler"5: "NicolausCopernicus"6: "MaxPlanck"7: "KatherineBlodgett"8: "AdaLovelace"9: "Sarah E.Goode"10: "LiseMeitner"11: "HannaHammarström"length: 12__proto__: Array(0)
+    // 2b - concatinated spaces
+    // const fullName = inventors.map(inventor => inventor.first + ' '  + inventor.last);
+    // console.log('fullName ', fullName);
+    // CONSOLE fullName  (12) ["Albert Einstein", "Isaac Newton", "Galileo Galilei", "Marie Curie", "Johannes Kepler", "Nicolaus Copernicus", "Max Planck", "Katherine Blodgett", "Ada Lovelace", "Sarah E. Goode", "Lise Meitner", "Hanna Hammarström"]
+    // 2c - or use backticks to return and template strings
+    // this is the cleanest & most modern - template strings.
+    const fullName = inventors.map(inventor => `${inventor.first} ${inventor.last}` );
+    console.log('fullName ', fullName);
+    // CONSOLE fullName  (12) ["Albert Einstein", "Isaac Newton", "Galileo Galilei", "Marie Curie", "Johannes Kepler", "Nicolaus Copernicus", "Max Planck", "Katherine Blodgett", "Ada Lovelace", "Sarah E. Goode", "Lise Meitner", "Hanna Hammarström"]
+
+
 
     // Array.prototype.sort()
     // 3. Sort the inventors by birthdate, oldest to youngest
