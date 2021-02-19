@@ -54,7 +54,7 @@
         return true; // keep it
       }
     });
-    console.table(arrowFunction);
+    //console.table(arrowFunction);
 
 
 // Array.prototype.filter() - done even shorter scene as this returns true/false
@@ -62,7 +62,7 @@
     const oneLineTrueFalseArrowFunction = inventors.filter(inventor => inventor.year >= 1500 && inventor.year < 1600);
     // scene as it returns true/false, we can add it all on one line to do this.
     // if both are true return a boolean true
-    console.table(oneLineTrueFalseArrowFunction);
+    //console.table(oneLineTrueFalseArrowFunction);
 
 
 // Array.prototype.map()
@@ -78,17 +78,68 @@
     // 2c - or use backticks to return and template strings
     // this is the cleanest & most modern - template strings.
     const fullName = inventors.map(inventor => `${inventor.first} ${inventor.last}` );
-    console.log('fullName ', fullName);
+    // console.log('fullName ', fullName);
     // CONSOLE fullName  (12) ["Albert Einstein", "Isaac Newton", "Galileo Galilei", "Marie Curie", "Johannes Kepler", "Nicolaus Copernicus", "Max Planck", "Katherine Blodgett", "Ada Lovelace", "Sarah E. Goode", "Lise Meitner", "Hanna Hammarström"]
 
 
 
-    // Array.prototype.sort()
-    // 3. Sort the inventors by birthdate, oldest to youngest
+// Array.prototype.sort()
+// 3. Sort the inventors by birthdate, oldest to youngest
+    /* The way sort works is we compare the items of the array in pairs. 
+     * Say we have 6 2 9 7 3, it will compare 6 and 2 and swap, if it needs to the 6 and 2
+     * Sorting my smallest it does need to so: 2 6 9 7 3, then it compares the next 2, 6 & 9 
+     * These don't need to be swapped as 6 is the smaller, so 2 6 9 7 3,
+     * okay now we compare 9 & 7, these need to be swapped, so 2 6 7 9 3 
+     * now we compare 9 and 3, which need to be swapped 2 6 7 3 9  
+     * with this method, the largest always ends up at the end, so 2 6 7 3 .9 
+     * we have SORTED THE FINAL POSITION IN THE ARRAY, we continue 
+     * so 2 6, okay next pair, 6 7 check, next pair, 7 3 nope, we have to swap these so we get
+     * 2 6 3 7 and 9, now we compare the last 2, 7 9 okay, all good so the final 2 are sorted: so 2 6 3 .7 9  
+     * and we can move on
+     * 2 6, okay, 6, 3, nope we must switch so 2 3 6 7 9, compare 6 7, okay dont need to compare 7 9.
+     * now the final 3 items in the array have been sorted and we have 2 3 .6 7 9
+     * start again
+     * */
+// Array.prototype.sort()
+// 3. Sort the inventors by birthdate, oldest to youngest
+//3a We can do all the below to achieve this or we can use a ternary     
+    // const ordered = inventors.sort(function(a, b) {
+    //   if (a.year > b.year) {
+    //     return 1;
+    //   } else {
+    //     return -1;
+    //   }
+    // });
+
+    // this is a ternary return - shorthand if statement.
+    const ordered = inventors.sort((a,b) => a.year > b.year ? 1 : -1)
+    //console.table(ordered);
 
     // Array.prototype.reduce()
     // 4. How many years did all the inventors live?
+// Method 4a with a for loop and incrementing it
+    /* var totalYears = 0;
+     for(var i = 0; i < inventors.length; i++) {
+       totalYears += inventors[i].year
+    }
+    console.log('these are the totalYears ', totalYears);
+    */
 
+    /*
+      const totalYears = inventors.reduce((total, inventor) => {
+        return total + (inventors.passed - inventor.year);
+      });
+      // ERROR this returns these are the totalYears  [object Object]NaNNaNNaNNaNNaNNaNNaNNaNNaNNaNNaN
+      // because we never initialised the total on the first loop,
+      // to fix this all we do is
+      console.log('these are the totalYears ', totalYears);
+      */
+
+     const totalYears = inventors.reduce((total, inventor) => {
+      return total + (inventor.passed - inventor.year);
+    }, 0);
+
+    console.log(totalYears);
     // 5. Sort the inventors by years lived
 
     // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
