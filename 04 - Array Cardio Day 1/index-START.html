@@ -172,11 +172,17 @@
 
     // 7. sort Exercise
     // Sort the people alphabetically by last name
-    const alpha = people.sort(function(lastOne, nextOne) {
-    const parts = lastOne.split(', ');
+      const alpha = people.sort(function(lastOne, nextOne) {
+    
+      //destructuring into last first straight away instead  
+          const [aLast, aFirst] = lastOne.split(', ');
+          const [bLast, bFirst] = nextOne.split(', ');
+          return aLast > bLast ? 1 : -1;
 
-    console.log(parts)
-     
+          console.log(alpha);
+          console.log('YOOOO');
+      });
+    
       // console.log(parts); gives us a list like the following: 
       //1.  console.log(lastOne); 
       /*  Becker, Carl
@@ -196,17 +202,38 @@
       (2) ["Blake", "William"]
 
       // 3. to make it even better, we can destructure this right away 
-      // splitting them to make them into their own
+      // splitting them to make them into their own thing.
 
 
 */
 
-    });
+  
 
     // 8. Reduce Exercise
     // Sum up the instances of each of these
     const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
 
+    const transportation = data.reduce(function(obj, item) {
+        if(!obj[item]) {
+          obj[item] = 0;
+        }  
+        obj[item]++;
+        return obj;
+    }, {});
+
+    console.log(transportation)
+
+  // this will CREATE an object for us!
+  /* {car: 5, truck: 3, bike: 2, walk: 2, van: 2}
+        bike: 2
+        car: 5
+        truck: 3
+        van: 2
+        walk: 2
+        __proto__: Object
+
+        */
+    // for this one we start with a blank object and loop over * {} * 
   </script>
 </body>
 </html>
