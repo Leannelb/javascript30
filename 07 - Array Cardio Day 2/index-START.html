@@ -48,24 +48,76 @@
     // can help us delete an item at a specific locaton in the array
     // delete the comment with the ID of 823423
 
+// Method 1 Array.prototype.findIndex()
     const indexFound = comments.findIndex(comment => comment.id == 823423) 
-    //  SHOULDNT HAVE BEEN ENCLOSED IN {} A FUNCTION ITS A ONE LINE FUNCION!!!! removed and no change to the below ... 
 
+    // console.log({indexFound});
+    // // {indexFound: 1}
 
-      console.log({indexFound});
-      // {indexFound: 1}
+    // const splicedArray = comments.splice(indexFound);
+    // console.log({splicedArray});
+    //     // splicedArray: Array(4) spliceing something gives you back the array minus that item.
+    // // 0: {text: "Super good", id: 823423}
+    // // 1: {text: "You are the best", id: 2039842}
+    // // 2: {text: "Ramen is my fav food ever", id: 123523}
+    // // 3: {text: "Nice Nice Nice!", id: 542328}
+    // // length: 4
 
-      const splicedArray = comments.splice(indexFound);
-      console.log({splicedArray});
-         // splicedArray: Array(4) spliceing something gives you back the array minus that item.
-        // 0: {text: "Super good", id: 823423}
-        // 1: {text: "You are the best", id: 2039842}
-        // 2: {text: "Ramen is my fav food ever", id: 123523}
-        // 3: {text: "Nice Nice Nice!", id: 542328}\
+    // console.log({comments});
+    // // comments: Array(1) // because we didnt specify a range, our array is rewritten to just the spliced item
+    // // 0: {text: "Love this!", id: 523423}
 
-      console.log({comments});
-        // comments: Array(1) // because we didnt specify a range, our array is rewritten to just the spliced item
-        // 0: {text: "Love this!", id: 523423}
+// Method 2 Array.prototype.findIndex()
+    // const index = comments.findIndex(comment => comment.id == 823423);
+    // console.log({index});
+    // // // {index: 1}
+
+    // const splicedArray = comments.splice(index, 1);
+    // console.log({splicedArray});
+    // // now the spliced item is JUST the array, if you give it the value of 1, 1 item
+    // console.log({comments});
+    // Now the comments array is the array, minus the spiced item
+    // // 0: {text: "Super good", id: 823423}
+    // // 1: {text: "You are the best", id: 2039842}
+    // // 2: {text: "Ramen is my fav food ever", id: 123523}
+    // // 3: {text: "Nice Nice Nice!", id: 542328}
+    // // length: 4
+
+// Method 3 Array.prototype.findIndex()
+    const index = comments.findIndex(comment => comment.id === 823423);
+    // without overriting old array
+    const newComments = [
+        ...comments.slice(0, index),
+        ...comments.slice(index + 1)
+    ];
+
+    console.log({comments});
+    console.log({newComments});
+    console.log({index});
+
+//
+// comments: Array(5)
+    // 0: {text: "Love this!", id: 523423}
+    // 1: {text: "Super good", id: 823423}
+    // 2: {text: "You are the best", id: 2039842}
+    // 3: {text: "Ramen is my fav food ever", id: 123523}
+    // 4: {text: "Nice Nice Nice!", id: 542328}
+    // length: 5
+    // __proto__: Array(0)
+    // __proto__: Object
+
+// {newComments: Array(4)}
+    // newComments: Array(4)
+    // 0: {text: "Love this!", id: 523423}
+    // 1: {text: "You are the best", id: 2039842}
+    // 2: {text: "Ramen is my fav food ever", id: 123523}
+    // 3: {text: "Nice Nice Nice!", id: 542328}
+    // length: 4
+    // __proto__: Array(0)
+    // __proto__: Object
+
+// {index: 1}
+    // index: 1
 
   </script>
 </body>
