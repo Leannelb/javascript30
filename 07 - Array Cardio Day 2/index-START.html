@@ -51,9 +51,21 @@
     const indexFound = comments.findIndex(comment => comment.id == 823423) 
     { 
       console.log({indexFound});
-      const splicedItem = comments.splice(indexFound);
-      console.log({splicedItem});
+      // {indexFound: 1}
+
+      const splicedArray = comments.splice(indexFound);
+      console.log({splicedArray});
+         // splicedArray: Array(4) spliceing something gives you back the array minus that item.
+        // 0: {text: "Super good", id: 823423}
+        // 1: {text: "You are the best", id: 2039842}
+        // 2: {text: "Ramen is my fav food ever", id: 123523}
+        // 3: {text: "Nice Nice Nice!", id: 542328}\
+
       console.log({comments});
+        // comments: Array(1) // because we didnt specify a range, our array is rewritten to just the spliced item
+        // 0: {text: "Love this!", id: 523423}
+
+        console.log
     }
 
   </script>
