@@ -17,29 +17,265 @@
       p.style.fontSize = '50px';
     }
 
-    // Regular
+// Regular
+//     console.log('hello');
 
-    // Interpolated
+// // Interpolated
+//     console.log('hello I am a %s string', '🥰');
+//     // this interpolates it over there like: 
+//     // hello I am a 🥰 string
 
-    // Styled
+// // Styled
+//      console.log('%c I am some great Blue text', 'color: blue;')
+//     //  I am some great text (in blue)
+//      console.log('%c I am some great Large text', 'font-size: 2rem;')
+//      console.log('%c I am some great Large text', 'font-size: 2em;')
+//     // %c allows you to do this and style the console output
+//     // font is huge in the console.
+//     //rem is bigger than em
 
-    // warning!
+//     // warning!
+//     console.warn('NOOO error');
+//     // this also gives you the STACK TRACE where the item was called from
 
-    // Error :|
+//     // Error :|
+//     console.warn('this is an error, also with a stack trace');
 
     // Info
+    console.info('get some info');
 
     // Testing
+    console.assert(1 === 1 , 'That is true');
+    // if this is true, you get back no console log
+    console.assert(1 === 2 , 'That is wrong');
+    // if its false you get back this in the console
+    // Assertion failed: That is wrong
+    const p = document.querySelector('p');
+    console.assert(p.classList.contains('ouch'), 'That is wrong');
+    // gets printed out
 
     // clearing
+    console.clear();
+    // leaves the console blank
 
     // Viewing DOM Elements
+    console.log(p);
+    //pringts out the p 
+    // so <p conclick="makegreen()">×BREAK×DOWN×</p>
+    console.dir(p);
+    // this logs alllll the things you can do with the p
+    // accessKey: ""
+    // align: ""
+    // ariaAtomic: null
+    // ariaAutoComplete: null
+    // ariaBusy: null
+    // ariaChecked: null
+    // ariaColCount: null
+    // ariaColIndex: null
+    // ariaColSpan: null
+    // ariaCurrent: null
+    // ariaDescription: null
+    // ariaDisabled: null
+    // ariaExpanded: null
+    // ariaHasPopup: null
+    // ariaHidden: null
+    // ariaKeyShortcuts: null
+    // ariaLabel: null
+    // ariaLevel: null
+    // ariaLive: null
+    // ariaModal: null
+    // ariaMultiLine: null
+    // ariaMultiSelectable: null
+    // ariaOrientation: null
+    // ariaPlaceholder: null
+    // ariaPosInSet: null
+    // ariaPressed: null
+    // ariaReadOnly: null
+    // ariaRelevant: null
+    // ariaRequired: null
+    // ariaRoleDescription: null
+    // ariaRowCount: null
+    // ariaRowIndex: null
+    // ariaRowSpan: null
+    // ariaSelected: null
+    // ariaSetSize: null
+    // ariaSort: null
+    // ariaValueMax: null
+    // ariaValueMin: null
+    // ariaValueNow: null
+    // ariaValueText: null
+    // assignedSlot: null
+    // attributeStyleMap: StylePropertyMap {size: 1}
+    // attributes: NamedNodeMap {0: onclick, 1: style, onclick: onclick, style: style, length: 2}
+    // autocapitalize: ""
+    // autofocus: false
+    // baseURI: "file:///C:/Users/Dell/Documents/SITES/javascript30/09%20-%20Dev%20Tools%20Domination/index-START.html"
+    // childElementCount: 0
+    // childNodes: NodeList [text]
+    // children: HTMLCollection []
+    // classList: DOMTokenList [value: ""]
+    // className: ""
+    // clientHeight: 21
+    // clientLeft: 0
+    // clientTop: 0
+    // clientWidth: 476
+    // contentEditable: "inherit"
+    // dataset: DOMStringMap {}
+    // dir: ""
+    // draggable: false
+    // elementTiming: ""
+    // enterKeyHint: ""
+    // firstChild: text
+    // firstElementChild: null
+    // hidden: false
+    // id: ""
+    // innerHTML: "×BREAK×DOWN×"
+    // innerText: "×BREAK×DOWN×"
+    // inputMode: ""
+    // isConnected: true
+    // isContentEditable: false
+    // lang: ""
+    // lastChild: text
+    // lastElementChild: null
+    // localName: "p"
+    // namespaceURI: "http://www.w3.org/1999/xhtml"
+    // nextElementSibling: script
+    // nextSibling: text
+    // nodeName: "P"
+    // nodeType: 1
+    // nodeValue: null
+    // nonce: ""
+    // offsetHeight: 21
+    // offsetLeft: 8
+    // offsetParent: body
+    // offsetTop: 18
+    // offsetWidth: 476
+    // onabort: null
+    // onanimationend: null
+    // onanimationiteration: null
+    // onanimationstart: null
+    // onauxclick: null
+    // onbeforecopy: null
+    // onbeforecut: null
+    // onbeforepaste: null
+    // onbeforexrselect: null
+    // onblur: null
+    // oncancel: null
+    // oncanplay: null
+    // oncanplaythrough: null
+    // onchange: null
+    // onclick: ƒ onclick(event)
+    // onclose: null
+    // oncontextmenu: null
+    // oncopy: null
+    // oncuechange: null
+    // oncut: null
+    // ondblclick: null
+    // ondrag: null
+    // ondragend: null
+    // ondragenter: null
+    // ondragleave: null
+    // ondragover: null
+    // ondragstart: null
+    // ondrop: null
+    // ondurationchange: null
+    // onemptied: null
+    // onended: null
+    // onerror: null
+    // onfocus: null
+    // onformdata: null
+    // onfullscreenchange: null
+    // onfullscreenerror: null
+    // ongotpointercapture: null
+    // oninput: null
+    // oninvalid: null
+    // onkeydown: null
+    // onkeypress: null
+    // onkeyup: null
+    // onload: null
+    // onloadeddata: null
+    // onloadedmetadata: null
+    // onloadstart: null
+    // onlostpointercapture: null
+    // onmousedown: null
+    // onmouseenter: null
+    // onmouseleave: null
+    // onmousemove: null
+    // onmouseout: null
+    // onmouseover: null
+    // onmouseup: null
+    // onmousewheel: null
+    // onpaste: null
+    // onpause: null
+    // onplay: null
+    // onplaying: null
+    // onpointercancel: null
+    // onpointerdown: null
+    // onpointerenter: null
+    // onpointerleave: null
+    // onpointermove: null
+    // onpointerout: null
+    // onpointerover: null
+    // onpointerrawupdate: null
+    // onpointerup: null
+    // onprogress: null
+    // onratechange: null
+    // onreset: null
+    // onresize: null
+    // onscroll: null
+    // onsearch: null
+    // onseeked: null
+    // onseeking: null
+    // onselect: null
+    // onselectionchange: null
+    // onselectstart: null
+    // onstalled: null
+    // onsubmit: null
+    // onsuspend: null
+    // ontimeupdate: null
+    // ontoggle: null
+    // ontransitioncancel: null
+    // ontransitionend: null
+    // ontransitionrun: null
+    // ontransitionstart: null
+    // onvolumechange: null
+    // onwaiting: null
+    // onwebkitanimationend: null
+    // onwebkitanimationiteration: null
+    // onwebkitanimationstart: null
+    // onwebkitfullscreenchange: null
+    // onwebkitfullscreenerror: null
+    // onwebkittransitionend: null
+    // onwheel: null
+    // outerHTML: "<p onclick="makeGreen()" style="font-size: large;">×BREAK×DOWN×</p>"
+    // outerText: "×BREAK×DOWN×"
+    // ownerDocument: document
+    // parentElement: body
+    // parentNode: body
+    // part: DOMTokenList [value: ""]
+    // prefix: null
+    // previousElementSibling: null
+    // previousSibling: text
+    // scrollHeight: 21
+    // scrollLeft: 0
+    // scrollTop: 0
+    // scrollWidth: 476
+    // shadowRoot: null
+    // slot: ""
+    // spellcheck: true
+    // style: CSSStyleDeclaration {0: "font-size", alignContent: "", alignItems: "", alignSelf: "", alignmentBaseline: "", all: "", …}
+    // tabIndex: -1
+    // tagName: "P"
+    // textContent: "×BREAK×DOWN×"
+    // title: ""
+    // translate: true
+    // __proto__: HTMLParagraphElement
 
-    // Grouping together
+// Grouping together
 
-    // counting
+// counting
 
-    // timing
+// timing
 
   </script>
 </body>
